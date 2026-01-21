@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f7f7f7;
+            color: #222;
+        }
+
+
+        header {
+            background-color: #0a66c2;
+            color: white;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        header img {
+            height: 40px;
+            width: 40px;
+        }
+
+
+        nav {
+            background-color: #ffffff;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 12px;
+            text-decoration: none;
+            color: #0a66c2;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 15px;
+            background-color: white;
+        }
+
+
+        .search-box {
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #0a66c2;
+            color: white;
+        }
+
+        .search-box input {
+            width: 45%;
+            padding: 6px;
+            margin-right: 2%;
+        }
+
+        .search-box button {
+            padding: 6px 12px;
+        }
+
+
+        .job {
+            display: flex;
+            gap: 15px;
+            padding: 12px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .job img {
+            height: 50px;
+            width: 50px;
+        }
+
+        .job h3 {
+            margin: 0;
+            color: #0a66c2;
+            font-size: 16px;
+        }
+
+        .job p {
+            margin: 3px 0;
+            font-size: 14px;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 13px;
+            padding: 10px;
+            border-top: 1px solid #ccc;
+            margin-top: 20px;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="logo.jpg" alt="Logo">
+        <h1>Job Portal</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Jobs</a>
+        <a href="#">Companies</a>
+        <a href="#">Post Job</a>
+    </nav>
+
+    <div class="container">
+
+        <div class="search-box">
+            <input type="text" placeholder="Job title or skill">
+            <input type="text" placeholder="Location">
+            <button>Search</button>
+        </div>
+
+        <div class="job">
+            <img src="google.jpg" alt="Company">
+            <div>
+                <h3>Software Engineer</h3>
+                <p>Company: Google</p>
+                <p>Location: Bangalore | Experience: Fresher</p>
+            </div>
+        </div>
+
+        <div class="job">
+            <img src="amazon.png" alt="Company">
+            <div>
+                <h3>Java Developer</h3>
+                <p>Company: Amazon</p>
+                <p>Location: Pune | Experience: 1–2 Years</p>
+            </div>
+        </div>
+
+        <div class="job">
+            <img src="facebook.png" alt="Company">
+            <div>
+                <h3>Frontend Developer</h3>
+                <p>Company: Facebook</p>
+                <p>Location: Remote | Experience: 0–1 Year</p>
+            </div>
+        </div>
+
+        <div class="job">
+            <img src="dell.png" alt="Company">
+            <div>
+                <h3>Cloud Engineer</h3>
+                <p>Company: Dell</p>
+                <p>Location: Hyderabad | Experience: Fresher</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        © 2026 Job Portal
+    </footer>
+
+</body>
+
+</html>
