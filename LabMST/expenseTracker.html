@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Expense Tracker</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+        }
+
+        input,
+        select,
+        button {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        li {
+            list-style: none;
+            margin: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h2>Expense Tracker</h2>
+
+    <input type="text" id="name" placeholder="Expense Name">
+    <input type="number" id="amount" placeholder="Amount">
+
+    <select id="category">
+        <option>Food</option>
+        <option>Travel</option>
+        <option>Shopping</option>
+    </select>
+
+    <br><br>
+
+    <button onclick="addExpense()">Add Expense</button>
+
+    <ul id="list"></ul>
+
+    <h3>Total: ₹ <span id="total">0</span></h3>
+
+    <script>
+
+        let expenses = [];
+        let editIndex = -1;
+
+        function addExpense() {
+
+            let name = document.getElementById("name").value;
+            let amount = Number(document.getElementById("amount").value);
+            let category = document.getElementById("category").value;
+
+            if (editIndex == -1) {
+                expenses.push({ name, amount, category });
+            }
+            else {
+                expenses[editIndex] = { name, amount, category };
+                editIndex = -1;
+            }
+
+            showExpenses();
+            clearInput();
+        }
+
+        function showExpenses() {
+
+            let list = document.getElementById("list");
+            list.innerHTML = "";
+            let total = 0;
+
+            expenses.forEach((e, i) => {
+
+                total += e.amount;
+
+                list.innerHTML += `
+<li>
+${e.name} - ₹${e.amount} - ${e.category}
+<button onclick="editExpense(${i})">Update</button>
+<button onclick="deleteExpense(${i})">Delete</button>
+</li>
+`;
+
+            });
+
+            document.getElementById("total").innerText = total;
+        }
+
+        function editExpense(i) {
+
+            document.getElementById("name").value = expenses[i].name;
+            document.getElementById("amount").value = expenses[i].amount;
+            document.getElementById("category").value = expenses[i].category;
+
+            editIndex = i;
+        }
+
+        function deleteExpense(i) {
+
+            expenses.splice(i, 1);
+            showExpenses();
+        }
+
+        function clearInput() {
+
+            document.getElementById("name").value = "";
+            document.getElementById("amount").value = "";
+        }
+
+    </script>
+
+</body>
+
+</html>
